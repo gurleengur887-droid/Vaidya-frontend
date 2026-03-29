@@ -30,7 +30,7 @@ export default function Checkout() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/order/create", {
+      const res = await fetch("https://vaidya-backend-0lhd.onrender.com/api/order/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -23,7 +23,7 @@ const handleSignup = async () => {
   console.log("SENDING:", { name, email, password });
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/signup", {
+    const res = await fetch("https://vaidya-backend-0lhd.onrender.com/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -49,7 +49,7 @@ const handleSignup = async () => {
   // ✅ LOGIN FUNCTION (ADDED)
  const handleLogin = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch("https://vaidya-backend-0lhd.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
