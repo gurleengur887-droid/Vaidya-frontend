@@ -1,0 +1,146 @@
+.auth-container {
+  display: flex;
+  height: 100vh;
+  background: #0b0f19;
+  color: white;
+}
+
+/* LEFT */
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f5dc, #22c55e);
+}
+.left-panel h2 {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.left-panel p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+.lottie {
+  width: 500px;   /* 🔥 increased */
+  max-width: 100%;
+ animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* RIGHT */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ⭐ STARS */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stars span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* ✨ REAL TWINKLE */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+/* CARD */
+.auth-card {
+  width: 350px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  z-index: 2;
+}
+
+/* INPUT */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 12px 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* LABEL FIX */
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 6px;
+  font-size: 11px;
+  color: #22c55e;
+  transform: none;
+}
+
+.eye {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.switch span {
+  color: #4ade80;
+  cursor: pointer;
+}

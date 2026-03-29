@@ -1,0 +1,124 @@
+/* 🌌 PAGE */
+.success-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND GLOW */
+.success-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(circle at 20% 20%, #81c784, transparent),
+              radial-gradient(circle at 80% 80%, #2e7d32, transparent);
+
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* ✨ PARTICLES */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(46,125,50,0.6);
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-25px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.3; }
+}
+
+/* 💎 CARD */
+.success-card {
+  z-index: 2;
+  width: 380px;
+  padding: 40px;
+  text-align: center;
+
+  border-radius: 25px;
+
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+
+  animation: popIn 0.6s ease;
+}
+
+/* ENTRY ANIMATION */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 🎬 LOTTIE */
+.success-lottie {
+  width: 180px;
+  margin: auto;
+}
+
+/* TEXT */
+.success-card h1 {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.success-card p {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+/* BUTTONS */
+.success-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.success-actions button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #66bb6a, #1b5e20);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.success-actions button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(46,125,50,0.5);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 500px) {
+  .success-card {
+    width: 90%;
+    padding: 30px;
+  }
+}
