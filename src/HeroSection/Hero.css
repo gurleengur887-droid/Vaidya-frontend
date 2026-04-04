@@ -170,7 +170,7 @@ body {
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* GLOW */
+
 
 
 /* CARD */
@@ -701,6 +701,7 @@ z-index: 5;
 
   .hero-card {
     padding: 20px;
+    
   }
 
   .hero-card h1 {
@@ -739,30 +740,35 @@ z-index: 5;
 /* DELIVERY TIMELINE */
 @media (max-width: 768px) {
   .timeline {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* 👈 spread evenly */
-    align-items: center;
-    gap: 10px; /* smaller gap */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
 
-    overflow: hidden; /* ❌ no scroll */
-  }
+.timeline-item {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
 
-  .timeline-item {
-    flex: 1; /* 👈 THIS IS THE MAIN FIX */
-    text-align: center;
-  }
+.circle {
+  width: 44px;   /* 👈 reduce more */
+  height: 44px;
+}
 
-  .circle {
-    width: 60px;   /* 👈 reduce size */
-    height: 60px;
-    margin: 0 auto;
-  }
+.timeline-item h3 {
+  font-size: 12px;
+}
 
-  .timeline-line {
-    width: 30px; /* smaller connecting line */
-    height: 4px;
-  }
+.timeline-item p {
+  font-size: 10px;
+}
+
+.timeline-line {
+  width: 20px;
+}
 }
 
 /* TRUST CARDS */
@@ -790,7 +796,9 @@ z-index: 5;
 /* LEARN MORE BUTTON FIX */
 @media (max-width: 768px) {
   .learn-more {
-    bottom: -10px;
+   position: relative;
+   bottom: 0;
+   margin-top: 10px;
     left: 50%;
     transform: translateX(-50%);
   }
