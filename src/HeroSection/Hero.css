@@ -164,14 +164,10 @@ body {
 .hero-image img {
   width: 100%;
   max-width: 420px;
-  animation: float 4s infinite ease-in-out;
+ 
 }
 .hero-image img:hover {
   transform: scale(1.05) rotate(-1deg);
-}
-
-@keyframes float {
-  50% { transform: translateY(-15px); }
 }
 
 /* GLOW */
