@@ -47,7 +47,7 @@ const Stickybar = () => {
   };
 
   return (
-    <div className={'sticky-wrapper ${hide ? "hide" : ""}'}>
+  <div className={`sticky-wrapper ${hide ? "hide" : ""}`}>
       <div className="sticky-bar">
 
         {/* ORDER BUTTON */}
