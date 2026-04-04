@@ -122,3 +122,80 @@
     padding: 30px;
   }
 }
+
+
+
+/* =========================
+   📱 SUCCESS PAGE RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .success-page {
+    padding: 20px;
+    height: auto;
+  }
+
+  .success-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 20px;
+  }
+
+  .success-lottie {
+    width: 150px;
+  }
+
+  .success-card h1 {
+    font-size: 20px;
+  }
+
+  .success-card p {
+    font-size: 14px;
+  }
+
+  /* BUTTON STACK */
+  .success-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .success-actions button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* LIGHTER BG */
+  .success-bg {
+    filter: blur(80px);
+  }
+
+  /* SMALLER PARTICLES */
+  .particles span {
+    width: 4px;
+    height: 4px;
+    opacity: 0.4;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .success-card {
+    padding: 25px 15px;
+  }
+
+  .success-lottie {
+    width: 130px;
+  }
+
+  .success-card h1 {
+    font-size: 18px;
+  }
+
+  .success-card p {
+    font-size: 13px;
+  }
+}

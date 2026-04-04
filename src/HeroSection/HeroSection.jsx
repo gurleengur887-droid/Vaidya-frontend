@@ -109,7 +109,7 @@ const handleSubscribe = async () => {
   
         {/* PRODUCT */}
         <div className="hero-image">
-          <div className="glow"></div>
+          
           <img src={product1} alt="product" />
           <Link to="/details-eye">
           <button className="learn-more">
@@ -197,7 +197,7 @@ const handleSubscribe = async () => {
 
   {/* IMAGE */}
   <div className="hero-image">
-    <div className="glow"></div>
+    
     <img src={tooth} alt="product2" />
     <Link to="/details-tooth">
     <button className="learn-more">

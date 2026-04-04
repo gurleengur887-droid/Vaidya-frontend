@@ -156,3 +156,109 @@
     flex-direction: column;
   }
 }
+
+
+/* =========================
+   📱 PRODUCT PAGE RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .product-page {
+    padding: 60px 40px;
+  }
+
+  .product-layout {
+    gap: 40px;
+  }
+
+  .media-frame {
+    width: 280px;
+    height: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .product-page {
+    padding: 40px 20px;
+  }
+
+  .product-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* 📱 VIDEO CENTERED + PERFECT SIZE */
+  .media-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .media-frame {
+    width: 260px;
+    height: 460px;
+  }
+
+  /* 🧾 CARD FULL WIDTH */
+  .info-card {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  /* TEXT SCALE */
+  .info-card h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .tagline {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* FEATURES */
+  .feature {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* USAGE */
+  .usage-box {
+    padding: 14px;
+  }
+
+  .usage-box h3 {
+    font-size: 16px;
+  }
+
+  /* TRUST */
+  .trust-section {
+    justify-content: center;
+  }
+
+  .trust {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .media-frame {
+    width: 220px;
+    height: 400px;
+  }
+
+  .info-card h1 {
+    font-size: 20px;
+  }
+
+  .feature {
+    font-size: 13px;
+  }
+}

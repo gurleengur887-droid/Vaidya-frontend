@@ -71,3 +71,68 @@
   transform: translateX(-50%) translateY(40px);
   pointer-events: none;
 }
+
+
+
+
+/* =========================
+   📱 STICKY BAR RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sticky-bar {
+    padding: 8px 12px;
+  }
+
+  .sticky-order {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* MOVE LOWER + FULL WIDTH FEEL */
+  .sticky-wrapper {
+    bottom: 10px;
+    padding: 0 10px;
+  }
+
+  .sticky-bar {
+    width: 100%;
+    max-width: 420px;
+
+    justify-content: center;
+    border-radius: 16px;
+
+    padding: 10px;
+  }
+
+  /* BUTTON FULL WIDTH */
+  .sticky-order {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .sticky-wrapper {
+    bottom: 8px;
+  }
+
+  .sticky-bar {
+    border-radius: 14px;
+    padding: 8px;
+  }
+
+  .sticky-order {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

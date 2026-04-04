@@ -230,3 +230,127 @@
     width: 200px;
   }
 }
+
+
+/* =========================
+   📱 CHECKOUT RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .checkout-wrapper {
+    gap: 30px;
+  }
+
+  .checkout-card {
+    width: 360px;
+    padding: 25px;
+  }
+
+  .floating-summary {
+    width: 240px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .checkout {
+    align-items: flex-start;
+    padding: 20px 10px;
+    overflow-y: auto;
+  }
+
+  .checkout-wrapper {
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+  }
+
+  /* 🎬 ANIMATION SMALLER */
+  .checkout-animation {
+    width: 180px;
+    margin: auto;
+  }
+
+  /* 💎 CARD FULL WIDTH */
+  .checkout-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+  }
+
+  .checkout-card h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* 🛍 PRODUCT */
+  .checkout-product {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* 🔢 QTY CENTER */
+  .checkout-qty {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* INPUT */
+  .checkout-input input,
+  .checkout-input textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  /* BUTTON */
+  .place-order {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* 🧾 SUMMARY → MOVE BELOW */
+  .floating-summary {
+    width: 100%;
+    max-width: 420px;
+    order: 3;
+  }
+
+  .summary-item {
+    font-size: 14px;
+  }
+
+  .summary-item.total {
+    font-size: 16px;
+  }
+
+  /* ❌ REDUCE HEAVY BG EFFECTS */
+  .checkout-bg {
+    filter: blur(80px);
+  }
+
+  /* ❌ PARTICLES LIGHTER */
+  .particles span {
+    width: 2px;
+    height: 2px;
+    opacity: 0.3;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .checkout-card {
+    padding: 16px;
+  }
+
+  .checkout-card h1 {
+    font-size: 20px;
+  }
+
+  .checkout-animation {
+    width: 150px;
+  }
+}

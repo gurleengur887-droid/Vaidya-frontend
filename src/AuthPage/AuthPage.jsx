@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
 import Tilt from "react-parallax-tilt";
 
@@ -17,11 +18,12 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+  const location = useLocation();
+  const productData = location.state;
+
   // ✅ SIGNUP FUNCTION (ADDED)
 const handleSignup = async () => {
-  console.log("BUTTON CLICKED 🔥");
-  console.log("SENDING:", { name, email, password });
-
   try {
     const res = await fetch("https://vaidya-backend-0lhd.onrender.com/api/auth/signup", {
       method: "POST",
@@ -32,10 +34,39 @@ const handleSignup = async () => {
     });
 
     const data = await res.json();
-    console.log("RESPONSE:", data);
 
     if (res.ok) {
-      alert("Signup successful 🔥");
+      // 🔥 AUTO LOGIN AFTER SIGNUP
+      const loginRes = await fetch("https://vaidya-backend-0lhd.onrender.com/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      const loginData = await loginRes.json();
+
+      if (loginRes.ok) {
+        // ✅ SAVE USER
+        localStorage.setItem("token", loginData.token);
+        localStorage.setItem("user", JSON.stringify(loginData.user));
+        localStorage.setItem("userId", loginData.user.id);
+
+        alert("Account created & logged in 🔥");
+
+        // 🚀 REDIRECT TO CHECKOUT
+      navigate("/checkout", {
+  state: productData || {
+    productName: "Ayur Netra Eye Drops",
+    quantity: 1
+  }
+});
+
+      } else {
+        alert("Login failed after signup ❌");
+      }
+
     } else {
       alert(data.message || "Signup failed ❌");
     }
@@ -44,7 +75,7 @@ const handleSignup = async () => {
     console.log(err);
     alert("Something went wrong ❌");
   }
-};     
+};
 
   // ✅ LOGIN FUNCTION (ADDED)
  const handleLogin = async () => {
@@ -58,19 +89,27 @@ const handleSignup = async () => {
     });
 
     const data = await res.json();
-    console.log(data);
 
     if (res.ok) {
       // ✅ SAVE TOKEN
       localStorage.setItem("token", data.token);
 
-      // ✅ OPTIONAL: SAVE USER
+      // ✅ SAVE USER
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("userId", data.user.id);
 
       alert("Login successful 🔥");
+
+      // ✅ NAVIGATE INSIDE IF
+      navigate("/checkout", {
+        state: productData || {
+          productName: "Ayur Netra Eye Drops",
+          quantity: 1
+        }
+      });
+
     } else {
-      alert(data.message); // ❌ wrong password / user not found
+      alert(data.message);
     }
 
   } catch (err) {

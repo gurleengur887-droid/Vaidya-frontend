@@ -222,6 +222,122 @@
 
 
 
+/* =========================
+   📱 TOOTH PAGE RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .tooth-page {
+    padding: 60px 4%;
+  }
+
+  .tooth-container {
+    gap: 40px;
+  }
+
+  .video-box {
+    height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .tooth-page {
+    padding: 40px 20px;
+  }
+
+  .tooth-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  /* 🎥 VIDEO FULL WIDTH */
+  .tooth-video {
+    width: 100%;
+  }
+
+  .video-box {
+    width: 100%;
+    height: 220px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* 📦 CARD FULL WIDTH */
+  .tooth-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* TEXT SCALE */
+  .tooth-card h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .tooth-card span {
+    font-size: 16px;
+  }
+
+  /* FEATURES */
+  .feature {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* USAGE */
+  .usage {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .usage h3 {
+    font-size: 15px;
+  }
+
+  .usage p {
+    font-size: 13px;
+  }
+
+  /* TRUST */
+  .trust {
+    gap: 10px;
+  }
+
+  .trust span {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* REMOVE HEAVY GLOW ON MOBILE */
+  .bg-glow {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .video-box {
+    height: 200px;
+  }
+
+  .tooth-card h1 {
+    font-size: 20px;
+  }
+
+  .feature {
+    font-size: 13px;
+  }
+}
+
 
 
 

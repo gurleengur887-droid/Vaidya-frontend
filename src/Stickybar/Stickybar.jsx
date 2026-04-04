@@ -27,18 +27,24 @@ const Stickybar = () => {
 
   // ✅ NEW LOGIC (ONLY THIS PART ADDED)
   const handleOrderClick = () => {
-    const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem("userId");
 
-    if (!userId) {
-      navigate("/auth");
-    } else {
-      navigate("/checkout", {
-        state: {
-          productName: "Ayur Netra Eye Drops",
-          quantity: 1,
-        },
-      });
-    }
+  if (!userId) {
+    navigate("/auth", {
+      state: {
+        productName: "Ayur Netra Eye Drops",
+        quantity: 1,
+      },
+    });
+  } else {
+    navigate("/checkout", {
+      state: {
+        productName: "Ayur Netra Eye Drops",
+        quantity: 1,
+      },
+    });
+  }
+};
   };
 
   return (
@@ -53,6 +59,6 @@ const Stickybar = () => {
       </div>
     </div>
   );
-};
+
 
 export default Stickybar;

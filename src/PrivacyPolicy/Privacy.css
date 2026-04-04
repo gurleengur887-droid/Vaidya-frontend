@@ -82,3 +82,91 @@
     transform: translateY(20px);
   }
 }
+
+
+
+
+
+/* =========================
+   📱 PRIVACY PAGE RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .policy-page {
+    padding: 30px 15px;
+  }
+
+  .policy-hero {
+    padding: 40px 20px;
+  }
+
+  .policy-hero h1 {
+    font-size: 30px;
+  }
+
+  .policy-container {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .policy-page {
+    padding: 20px 12px;
+  }
+
+  /* HERO */
+  .policy-hero {
+    padding: 30px 15px;
+    border-radius: 16px;
+  }
+
+  .policy-hero h1 {
+    font-size: 24px;
+  }
+
+  .policy-hero p {
+    font-size: 14px;
+  }
+
+  /* CARD */
+  .policy-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .policy-card h3 {
+    font-size: 16px;
+  }
+
+  .policy-card p {
+    font-size: 13px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .policy-hero h1 {
+    font-size: 20px;
+  }
+
+  .policy-hero p {
+    font-size: 13px;
+  }
+
+  .policy-card {
+    padding: 15px;
+  }
+
+  .policy-card h3 {
+    font-size: 15px;
+  }
+
+  .policy-card p {
+    font-size: 12.5px;
+  }
+}

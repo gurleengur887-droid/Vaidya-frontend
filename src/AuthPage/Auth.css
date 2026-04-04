@@ -144,3 +144,99 @@
   color: #4ade80;
   cursor: pointer;
 }
+
+
+
+
+/* =========================
+   📱 AUTH PAGE RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .lottie {
+    width: 350px;
+  }
+
+  .auth-card {
+    width: 320px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* ❌ REMOVE LEFT PANEL (BEST UX) */
+  .left-panel {
+    display: none;
+  }
+
+  /* RIGHT PANEL FULL SCREEN */
+  .right-panel {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* CARD */
+  .auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+  }
+
+  /* TEXT */
+  .auth-card h2 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  /* INPUT */
+  .input-group input {
+    padding: 16px 10px 8px;
+    font-size: 14px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+  }
+
+  /* BUTTON */
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* SWITCH TEXT */
+  .switch {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  /* REDUCE STARS (PERFORMANCE) */
+  .stars span {
+    width: 1px;
+    height: 1px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+  .auth-card {
+    padding: 20px;
+  }
+
+  .auth-card h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+  }
+}

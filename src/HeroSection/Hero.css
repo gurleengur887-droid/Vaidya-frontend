@@ -175,13 +175,7 @@ body {
 }
 
 /* GLOW */
-.glow {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(34,197,94,0.5), transparent);
-  filter: blur(100px);
-}
+
 
 /* CARD */
 .hero-card {
@@ -652,4 +646,146 @@ z-index: 5;
 
 .learn-more:hover .arrow {
   transform: translateX(5px);
+}
+
+/* =========================
+   📱 MOBILE RESPONSIVENESS
+========================= */
+
+/* NAVBAR */
+@media (max-width: 768px) {
+  .hero-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 60px;
+    margin: auto;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .nav-icons {
+    justify-content: center;
+  }
+}
+
+/* HERO INTRO */
+@media (max-width: 768px) {
+  .hero-intro h1 {
+    font-size: 24px;
+  }
+
+  .hero-intro p {
+    font-size: 14px;
+  }
+}
+
+/* MAIN PRODUCT SECTION */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 250px;
+    margin: auto;
+  }
+
+  .glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .hero-card h1 {
+    font-size: 20px;
+  }
+}
+
+/* BUY CARDS */
+@media (max-width: 768px) {
+  .buy-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .price {
+    align-self: flex-end;
+  }
+}
+
+/* BUTTON */
+@media (max-width: 768px) {
+  .order-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* SECOND PRODUCT FIX */
+@media (max-width: 900px) {
+  .second-product {
+    flex-direction: column !important;
+  }
+}
+
+/* DELIVERY TIMELINE */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .timeline-line {
+    width: 4px;
+    height: 40px;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+  }
+}
+
+/* TRUST CARDS */
+@media (max-width: 768px) {
+  .trust-card {
+    min-width: 100%;
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* FOOTER */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+/* LEARN MORE BUTTON FIX */
+@media (max-width: 768px) {
+  .learn-more {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
