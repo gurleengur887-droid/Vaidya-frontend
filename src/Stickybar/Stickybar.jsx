@@ -27,28 +27,27 @@ const Stickybar = () => {
 
   // ✅ NEW LOGIC (ONLY THIS PART ADDED)
   const handleOrderClick = () => {
-  const userId = localStorage.getItem("userId");
+    const userId = localStorage.getItem("userId");
 
-  if (!userId) {
-    navigate("/auth", {
-      state: {
-        productName: "Ayur Netra Eye Drops",
-        quantity: 1,
-      },
-    });
-  } else {
-    navigate("/checkout", {
-      state: {
-        productName: "Ayur Netra Eye Drops",
-        quantity: 1,
-      },
-    });
-  }
-};
+    if (!userId) {
+      navigate("/auth", {
+        state: {
+          productName: "Ayur Netra Eye Drops",
+          quantity: 1,
+        },
+      });
+    } else {
+      navigate("/checkout", {
+        state: {
+          productName: "Ayur Netra Eye Drops",
+          quantity: 1,
+        },
+      });
+    }
   };
 
   return (
-    <div className={`sticky-wrapper ${hide ? "hide" : ""}`}>
+    <div className={'sticky-wrapper ${hide ? "hide" : ""}'}>
       <div className="sticky-bar">
 
         {/* ORDER BUTTON */}
@@ -59,6 +58,6 @@ const Stickybar = () => {
       </div>
     </div>
   );
-
+};
 
 export default Stickybar;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import Tilt from "react-parallax-tilt";
 
@@ -18,7 +19,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
+  const navigate = useNavigate();
   const location = useLocation();
   const productData = location.state;
 
