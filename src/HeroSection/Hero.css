@@ -739,19 +739,27 @@ z-index: 5;
 /* DELIVERY TIMELINE */
 @media (max-width: 768px) {
   .timeline {
-    flex-direction: column;
+    flex-direction: row;        /* 🔥 force horizontal */
+    overflow-x: auto;           /* 🔥 enable scroll */
     gap: 20px;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+
+  .timeline::-webkit-scrollbar {
+    display: none;
   }
 
   .timeline-line {
-    width: 4px;
-    height: 40px;
+    width: 40px;   /* 🔄 horizontal line */
+    height: 4px;
   }
 
   .circle {
-    width: 70px;
+    min-width: 70px;  /* 🔥 prevent shrinking */
     height: 70px;
     font-size: 24px;
+    flex-shrink: 0;
   }
 }
 

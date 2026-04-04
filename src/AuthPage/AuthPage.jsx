@@ -23,6 +23,10 @@ export default function AuthPage() {
   const location = useLocation();
   const productData = location.state;
 
+
+  const isMobile = window.innerWidth < 768
+
+
   // ✅ SIGNUP FUNCTION (ADDED)
 const handleSignup = async () => {
   try {
@@ -160,7 +164,12 @@ const handleSignup = async () => {
           ))}
         </div>
 
-        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable glareMaxOpacity={0.2}>
+       <Tilt
+  tiltMaxAngleX={isMobile ? 0 : 10}
+  tiltMaxAngleY={isMobile ? 0 : 10}
+  glareEnable={!isMobile}
+  glareMaxOpacity={0.2}
+>
           <motion.div
             className="auth-card"
             initial={{ opacity: 0, y: 40 }}
@@ -251,7 +260,7 @@ const handleSignup = async () => {
                     <span onClick={() => setIsLogin(true)}>Login</span>
                   </p>
                 </motion.div>
-              )}
+              )} 
             </AnimatePresence>
 
           </motion.div>
