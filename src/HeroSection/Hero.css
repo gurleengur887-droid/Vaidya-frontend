@@ -739,7 +739,11 @@ z-index: 5;
 /* DELIVERY TIMELINE */
 @media (max-width: 768px) {
   .timeline {
-    flex-direction: row;        /* 🔥 force horizontal */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;        /* 🔥 force horizontal */
     overflow-x: auto;           /* 🔥 enable scroll */
     gap: 20px;
     white-space: nowrap;
@@ -749,10 +753,18 @@ z-index: 5;
   .timeline::-webkit-scrollbar {
     display: none;
   }
+  .timeline-item {
+    min-width: 120px;
+    flex-shrink: 0;
+    text-align: center;
+  }
 
   .timeline-line {
     width: 40px;   /* 🔄 horizontal line */
     height: 4px;
+  }
+  .timeline-wrapper {
+    overflow: auto;
   }
 
   .circle {
