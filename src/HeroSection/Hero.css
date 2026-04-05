@@ -741,9 +741,10 @@ z-index: 5;
 @media (max-width: 768px) {
   .timeline {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
   flex-wrap: nowrap;
 }
 
@@ -767,7 +768,8 @@ z-index: 5;
 }
 
 .timeline-line {
-  width: 20px;
+  width: 30px;
+  height: 4px;
 }
 }
 
