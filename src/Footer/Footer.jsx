@@ -19,7 +19,7 @@ export default function Footer() {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/subscribe",
+        "https://vaidya-backend-0lhd.onrender.com/api/subscribe",
         {
           method: "POST",
           headers: {

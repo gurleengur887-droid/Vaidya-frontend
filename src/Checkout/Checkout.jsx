@@ -73,7 +73,7 @@ export default function Checkout() {
       setIsPlacingOrder(true);
 
       const res = await fetch(
-        "http://localhost:5000/api/order/create",
+      "https://vaidya-backend-0lhd.onrender.com/api/order/create",
         {
           method: "POST",
 
