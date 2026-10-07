@@ -91,12 +91,12 @@ export default function Footer() {
               <FaInstagram />
             </a>
 
-            <a
-              href="#"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
+           <span
+  className="footer-social-link"
+  aria-label="Facebook"
+>
+  <FaFacebookF />
+</span>
 
           </div>
 
