@@ -1,0 +1,115 @@
+.vaidya-notification-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+
+  padding: 20px;
+}
+
+.vaidya-notification {
+  width: min(90%, 420px);
+
+  background: #f8fff5;
+  border-radius: 22px;
+
+  padding: 30px 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3);
+
+  animation: vaidyaNotificationIn 0.25s ease-out;
+}
+
+.vaidya-notification-logo {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #e4f5df;
+
+  font-size: 28px;
+}
+
+.vaidya-notification h2 {
+  margin: 0 0 12px;
+
+  color: #236b2b;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.vaidya-notification p {
+  margin: 0 auto 25px;
+
+  color: #333;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.vaidya-notification button {
+  border: none;
+
+  padding: 11px 32px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #4caf50,
+    #176b24
+  );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.vaidya-notification button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(23, 107, 36, 0.3);
+}
+
+.vaidya-notification.success .vaidya-notification-logo {
+  background: #dff5df;
+}
+
+.vaidya-notification.error .vaidya-notification-logo {
+  background: #fff0ed;
+}
+
+@keyframes vaidyaNotificationIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

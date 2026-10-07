@@ -1,0 +1,309 @@
+/* =========================================
+   🌿 GLOBAL FOOTER
+========================================= */
+
+.site-footer {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 60px 6% 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #103d18,
+      #1b5e20
+    );
+
+  color: white;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.site-footer-content {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.4fr;
+
+  gap: 50px;
+}
+
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.site-footer-column h3 {
+  margin: 0 0 18px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.site-footer-column p {
+  margin: 8px 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 27px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.brand-column p {
+  max-width: 260px;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.site-footer-column ul {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer-column li {
+  margin-bottom: 11px;
+}
+
+.site-footer-column a {
+  color: rgba(255, 255, 255, 0.72);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: 0.25s ease;
+}
+
+.site-footer-column a:hover {
+  color: white;
+
+  padding-left: 4px;
+}
+
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.footer-socials {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white !important;
+
+  padding: 0 !important;
+
+  transition: 0.25s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   📩 SUBSCRIBE
+========================================= */
+
+.footer-subscribe {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.footer-subscribe input {
+  min-width: 0;
+
+  flex: 1;
+
+  height: 42px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  font-family: inherit;
+}
+
+.footer-subscribe input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-subscribe button {
+  height: 42px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #66bb6a;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.footer-subscribe button:hover {
+  background: #81c784;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.footer-bottom {
+  max-width: 1250px;
+
+  margin: 45px auto 0;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   📱 TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .site-footer-content {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+  }
+}
+
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .site-footer {
+    padding: 45px 22px 18px;
+  }
+
+  .site-footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+  }
+
+  .footer-brand {
+    font-size: 24px;
+  }
+
+  .site-footer-column h3 {
+    margin-bottom: 12px;
+  }
+
+  .footer-subscribe {
+    width: 100%;
+  }
+
+  .footer-subscribe input {
+    width: 100%;
+  }
+
+  .footer-subscribe button {
+    flex-shrink: 0;
+  }
+
+  .footer-bottom {
+    margin-top: 35px;
+  }
+}

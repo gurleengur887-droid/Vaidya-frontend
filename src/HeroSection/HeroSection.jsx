@@ -1,50 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+
 import "./Hero.css";
-import mylogo from "../Image/mylogo.PNG";
+
 import product1 from "../Image/product1.PNG";
 import tooth from "../Image/tooth.PNG";
 const HeroSection = () => {
 const [selected, setSelected] = useState(1);
 const [selected2, setSelected2] = useState(1);
-const [email, setEmail] = useState("")
+
 const navigate = useNavigate();
 const handleOrder = async (productName, quantity) => {
   navigate("/checkout", {
     state: { productName, quantity }
   });
 }
-const handleSubscribe = async () => {
-  if (!email) {
-    alert("Enter email first ❌");
-    return;
-  }
 
-  try {
-    const res = await fetch("https://vaidya-backend-0lhd.onrender.com/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email })
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      alert("Subscribed successfully 🔥");
-      setEmail("");
-    } else {
-      alert(data.message || "Failed ❌");
-    }
-
-  } catch (err) {
-    console.log(err);
-    alert("Something went wrong ❌");
-  }
-};
 
   return (
    <section id="home" className="hero">
@@ -63,27 +35,7 @@ const handleSubscribe = async () => {
   })}
 </div>
       {/* 🔝 NAVBAR */}
-      <div className="hero-navbar">
-
-        <img src={mylogo} alt="logo" className="logo"/>
-
-        <input 
-          type="text" 
-          placeholder="Search products..." 
-          className="search-bar"
-        />
-
-        <div className="nav-icons">
-  <span className="nav-icon">🔍</span>
-          
-  <div onClick={() => navigate("/auth")} className="icon">
-  👤
-</div>
-  
-  
-</div>
-
-      </div>
+     
       {/* 🔥 HERO INTRO SECTION */}
 <div className="hero-intro">
 
@@ -320,90 +272,7 @@ const handleSubscribe = async () => {
   </div>
 
 </div>
-<footer id="footer" className="footer">
 
-  <div className="footer-content">
-
-    {/* LEFT */}
-    <div className="footer-col">
-      <h2>Vaidya Co.</h2>
-      <p>Pure Ayurvedic Care for Everyday Wellness 🌿</p>
-
-      <div className="socials">
-
-  <a 
-    href="https://instagram.com/vaidya.co" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <FaInstagram />
-  </a>
-
-  <a 
-    href="/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <FaFacebookF />
-  </a>
-
-</div>
-    </div>
-
-    {/* QUICK LINKS */}
-    <div className="footer-col">
-      <h3>Quick Links</h3>
-      <ul>
-       <li>
-  <a href="#home">Home</a>
-</li>
-       <li>
-  <a href="#eye-product">Eye Drops</a>
-</li>
-
-<li>
-  <a href="#tooth-product">Tooth Lotion</a>
-</li>
-        
-      </ul>
-    </div>
-
-    {/* POLICIES */}
-    <div className="footer-col">
-      <h3>Policies</h3>
-      <ul>
-       <li>
-  <Link to="/return">Return Policy</Link>
-</li>
-        <li>
-        <Link to="/privacy">Privacy Policy</Link>
-        </li>
-        <li> <Link to="/terms">Terms & Conditions</Link> </li>
-      </ul>
-    </div>
-
-    {/* SUBSCRIBE */}
-    <div className="footer-col subscribe">
-      <h3>Subscribe</h3>
-      <p>Get exclusive offers & updates</p>
-
-     <input 
-  type="email" 
-  placeholder="Enter your email"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-/>
-
-<button onClick={handleSubscribe}>Sign up</button>
-    </div>
-
-  </div>
-
-  <p className="footer-bottom-text">
-    © 2026 Vaidya Co. All rights reserved.
-  </p>
-
-</footer>
     </section>
     
   );
