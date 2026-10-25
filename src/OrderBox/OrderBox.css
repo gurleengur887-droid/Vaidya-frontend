@@ -1,0 +1,258 @@
+/* =========================================
+VAIDYA CO. — REUSABLE ORDER BOX
+========================================= */
+
+.reusable-order-box {
+width: 100%;
+padding: 22px;
+border-radius: 18px;
+background: rgba(255, 255, 255, 0.72);
+border: 1px solid rgba(46, 125, 50, 0.16);
+box-shadow: 0 12px 35px rgba(27, 94, 32, 0.09);
+font-family: inherit;
+color: #263b29;
+box-sizing: border-box;
+}
+
+.reusable-order-box * {
+box-sizing: border-box;
+}
+
+.order-box-heading {
+margin: 0 0 18px;
+color: #1b5e20;
+font-size: 21px;
+font-weight: 700;
+line-height: 1.4;
+}
+
+/* Pack information */
+
+.order-box-pack {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 15px;
+padding: 14px;
+border-radius: 12px;
+background: linear-gradient(135deg, #edf8ee, #f8fff8);
+border: 1px solid rgba(46, 125, 50, 0.09);
+}
+
+.order-box-pack-info,
+.order-box-pack-price {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.order-box-small-label {
+color: #718072;
+font-size: 11px;
+}
+
+.order-box-pack-info > strong,
+.order-box-pack-price > strong {
+color: #1b5e20;
+font-size: 17px;
+font-weight: 700;
+}
+
+.order-box-pack-price {
+align-items: flex-end;
+text-align: right;
+flex-shrink: 0;
+}
+
+.order-box-subtitle {
+color: #617162;
+font-size: 10px;
+line-height: 1.5;
+overflow-wrap: anywhere;
+}
+
+/* Quantity selector */
+
+.order-box-quantity-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 15px;
+padding: 19px 0;
+}
+
+.order-box-quantity-title {
+color: #263b29;
+font-size: 14px;
+font-weight: 600;
+}
+
+.order-box-quantity-subtitle {
+margin: 4px 0 0;
+color: #788578;
+font-size: 11px;
+}
+
+.order-box-counter {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+flex-shrink: 0;
+}
+
+.order-box-counter-btn {
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+border-radius: 50%;
+background: linear-gradient(135deg, #43b65a, #166534);
+color: #fff;
+font-family: inherit;
+font-size: 23px;
+line-height: 1;
+cursor: pointer;
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease,
+opacity 0.2s ease;
+}
+
+.order-box-counter-btn:hover:not(:disabled) {
+transform: scale(1.07);
+box-shadow: 0 4px 12px rgba(22, 101, 52, 0.2);
+}
+
+.order-box-counter-btn:disabled {
+opacity: 0.35;
+cursor: not-allowed;
+}
+
+.order-box-count {
+min-width: 20px;
+text-align: center;
+color: #1b5e20;
+font-size: 18px;
+font-weight: 700;
+}
+
+/* Summary */
+
+.order-box-summary {
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding: 15px 0;
+border-top: 1px solid rgba(46, 125, 50, 0.15);
+}
+
+.order-box-summary-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+}
+
+.order-box-summary-row > span {
+color: #637064;
+font-size: 12px;
+}
+
+.order-box-summary-row > strong {
+color: #263b29;
+font-size: 13px;
+font-weight: 600;
+}
+
+.order-box-grand-total {
+padding-top: 12px;
+border-top: 1px dashed rgba(46, 125, 50, 0.2);
+}
+
+.order-box-grand-total > span {
+color: #1b5e20;
+font-size: 14px;
+font-weight: 600;
+}
+
+.order-box-grand-total > strong {
+color: #1b5e20;
+font-size: 22px;
+font-weight: 800;
+}
+
+/* Order button */
+
+.order-box-button {
+width: 100%;
+min-height: 49px;
+padding: 12px 15px;
+border: none;
+border-radius: 12px;
+background: linear-gradient(110deg, #20c765, #116536);
+color: #fff;
+font-family: inherit;
+font-size: 13px;
+font-weight: 700;
+cursor: pointer;
+box-shadow: 0 8px 20px rgba(22, 101, 52, 0.18);
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.order-box-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px rgba(22, 101, 52, 0.26);
+}
+
+.order-box-trust {
+margin: 12px 0 0;
+text-align: center;
+color: #718072;
+font-size: 10px;
+line-height: 1.5;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+.reusable-order-box {
+padding: 17px;
+border-radius: 16px;
+}
+
+.order-box-heading {
+font-size: 19px;
+margin-bottom: 15px;
+}
+
+.order-box-pack {
+padding: 12px;
+}
+
+.order-box-quantity-row {
+gap: 10px;
+}
+
+.order-box-counter {
+gap: 11px;
+}
+
+.order-box-counter-btn {
+width: 33px;
+height: 33px;
+}
+
+.order-box-button {
+min-height: 46px;
+font-size: 12px;
+}
+
+.order-box-grand-total > strong {
+font-size: 20px;
+}
+}

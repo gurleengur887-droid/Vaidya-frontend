@@ -1,13 +1,13 @@
+
 import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 
 import HeroSection from "./HeroSection/HeroSection";
-import StickyBar from "./Stickybar/Stickybar";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
@@ -19,7 +19,8 @@ import ProductDetails from "./ProperDetails/ProductDetails";
 import ToothProduct from "./ToothProduct/ToothProduct";
 import Checkout from "./Checkout/Checkout";
 import SuccessPage from "./SuccessPage/SuccessPage";
-
+import TridentProduct from "./TridentProduct/TridentProduct";
+import ScrollToTop from "./ScrollToTop";
 
 /* =========================================
    APP CONTENT
@@ -28,89 +29,44 @@ import SuccessPage from "./SuccessPage/SuccessPage";
 function AppContent() {
   const location = useLocation();
 
-  // Header should ONLY appear on homepage
+  // Header appears only on the homepage
   const isHomePage = location.pathname === "/";
-
-  // Sticky Order Now bar should NOT appear
-  // on Checkout and Success pages
-  const hideStickyBar =
-    location.pathname === "/checkout" ||
-    location.pathname === "/success";
 
   return (
     <>
-      {/* 🌿 HEADER — HOMEPAGE ONLY */}
+      {/* HEADER — HOMEPAGE ONLY */}
       {isHomePage && <Header />}
 
-
-      {/* 🛒 STICKY ORDER BAR */}
-      {!hideStickyBar && <StickyBar />}
-
-
-      {/* 📄 PAGES */}
+      {/* PAGES */}
       <Routes>
+        {/* HOME */}
+        <Route path="/" element={<HeroSection />} />
 
-        {/* 🏠 HOME */}
-        <Route
-          path="/"
-          element={<HeroSection />}
-        />
+        {/* AUTH */}
+        <Route path="/auth" element={<AuthPage />} />
 
-        {/* 🔐 AUTH */}
-        <Route
-          path="/auth"
-          element={<AuthPage />}
-        />
+        {/* POLICIES */}
+        <Route path="/return" element={<ReturnPolicy />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsConditions />} />
 
-        {/* 📜 POLICIES */}
-        <Route
-          path="/return"
-          element={<ReturnPolicy />}
-        />
+        {/* PRODUCTS */}
+        <Route path="/details-eye" element={<ProductDetails />} />
+        <Route path="/details-tooth" element={<ToothProduct />} />
+        <Route path="/trident" element={<TridentProduct />} />
 
-        <Route
-          path="/privacy"
-          element={<PrivacyPolicy />}
-        />
+        {/* CHECKOUT */}
+        <Route path="/checkout" element={<Checkout />} />
 
-        <Route
-          path="/terms"
-          element={<TermsConditions />}
-        />
-
-        {/* 🌿 PRODUCTS */}
-        <Route
-          path="/details-eye"
-          element={<ProductDetails />}
-        />
-
-        <Route
-          path="/details-tooth"
-          element={<ToothProduct />}
-        />
-
-        {/* 🧾 CHECKOUT */}
-        <Route
-          path="/checkout"
-          element={<Checkout />}
-        />
-
-        {/* ✅ SUCCESS */}
-        <Route
-          path="/success"
-          element={<SuccessPage />}
-        />
-
+        {/* SUCCESS */}
+        <Route path="/success" element={<SuccessPage />} />
       </Routes>
 
-
-      {/* 🌿 FOOTER — ALL PAGES */}
+      {/* FOOTER — ALL PAGES */}
       <Footer />
-
     </>
   );
 }
-
 
 /* =========================================
    APP
@@ -119,9 +75,11 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );
 }
 
 export default App;
+

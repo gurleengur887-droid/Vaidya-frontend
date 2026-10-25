@@ -344,5 +344,86 @@
 
 
 
+/* ===== ORDER NOW BUTTON ===== */
+
+.tooth-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.tooth-order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 320px;
+  min-height: 52px;
+  padding: 14px 24px;
+
+  background: linear-gradient(135deg, #16803d, #14532d);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-align: center;
+
+  cursor: pointer;
+  outline: none;
+
+  box-shadow: 0 6px 18px rgba(22, 101, 52, 0.18);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.tooth-order-btn:hover {
+  background: linear-gradient(135deg, #15803d, #166534);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(22, 101, 52, 0.28);
+}
+
+/* Click effect */
+.tooth-order-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.18);
+}
+
+/* Keyboard accessibility */
+.tooth-order-btn:focus-visible {
+  outline: 3px solid #86efac;
+  outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tooth-order-btn {
+    max-width: 280px;
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .tooth-order-btn {
+    max-width: 240px;
+    min-height: 46px;
+    font-size: 14px;
+  }
+}
+
 
 

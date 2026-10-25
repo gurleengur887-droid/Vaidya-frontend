@@ -118,13 +118,13 @@ export default function Footer() {
             </li>
 
             <li>
-              <a href="/#eye-product">
+              <a href="/">
                 Eye Drops
               </a>
             </li>
 
             <li>
-              <a href="/#tooth-product">
+              <a href="/trident">
                 Tooth Lotion
               </a>
             </li>

@@ -154,20 +154,37 @@ body {
   margin-top: 40px;
 }
 
-/* PRODUCT */
+/* PRODUCT IMAGE — BIGGER & CLEANER */
+
 .hero-image {
   position: relative;
   flex: 1;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
+  display: block;
   width: 100%;
-  max-width: 420px;
- 
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+
+  /* Remove hover and tap effects */
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+  cursor: default;
 }
-.hero-image img:hover {
-  transform: scale(1.05) rotate(-1deg);
+
+/* Prevent zooming, rotating or moving */
+.hero-image img:hover,
+.hero-image img:active,
+.hero-image img:focus {
+  transform: none !important;
+  filter: none !important;
 }
 
 
@@ -589,60 +606,121 @@ html {
 }
 
 
+/* LEARN MORE / VIEW BENEFITS BUTTON */
+
+.learn-more-link {
+display: inline-block;
+text-decoration: none;
+}
+
 .learn-more {
-  position: absolute;
-  bottom: 10px;   /* distance from bottom */
-  left: 10px;     /* distance from left */
+position: absolute;
+bottom: 15px;
+left: 15px;
 
-  background: transparent;
-  border: none;
-  color: #2e8b57;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-bottom: -20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-z-index: 5;
-  transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+
+padding: 13px 22px;
+border: none;
+border-radius: 12px;
+
+background: linear-gradient(
+110deg,
+#20c765,
+#116536
+);
+
+color: #ffffff;
+font-family: inherit;
+font-size: 15px;
+font-weight: 700;
+line-height: 1.4;
+
+cursor: pointer;
+box-shadow: 0 8px 20px rgba(22, 101, 52, 0.25);
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease,
+background 0.25s ease;
 }
 
-/* ✨ HOVER */
 .learn-more:hover {
-  color: #145a32;
-  transform: translateX(5px);
+background: linear-gradient(
+110deg,
+#25d96f,
+#0d572b
+);
+
+color: #ffffff;
+transform: translateY(-3px);
+box-shadow: 0 12px 25px rgba(22, 101, 52, 0.35);
 }
 
-/* OPTIONAL UNDERLINE EFFECT */
-.learn-more::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background: #145a32;
-  transition: 0.3s;
+.learn-more:focus-visible {
+outline: 3px solid #a7f3b8;
+outline-offset: 4px;
 }
 
-.learn-more:hover::after {
-  width: 100%;
-}
-.arrow {
-  transition: 0.3s;
-}
-
-.learn-more:hover .arrow {
-  transform: translateX(5px);
-}
-.arrow {
-  transition: 0.3s;
+.learn-more .arrow {
+display: inline-block;
+color: inherit;
+transition: transform 0.25s ease;
 }
 
 .learn-more:hover .arrow {
-  transform: translateX(5px);
+transform: translateX(4px);
 }
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+.learn-more {
+bottom: 8px;
+left: 50%;
+padding: 12px 19px;
+font-size: 14px;
+white-space: nowrap;
+transform: translateX(-50%);
+}
+
+.learn-more:hover {
+transform: translateX(-50%) translateY(-3px);
+}
+}
+/* Desktop: Place View Benefits button BELOW the product image */
+@media (min-width: 769px) {
+  .hero-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-image img {
+    display: block;
+  }
+
+  .learn-more-link {
+    position: static;
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+  }
+
+  .learn-more {
+    position: static;
+    transform: none;
+  }
+
+  .learn-more:hover {
+    transform: translateY(-3px);
+  }
+}
+
+
 
 /* =========================
    📱 MOBILE RESPONSIVENESS
@@ -803,5 +881,25 @@ z-index: 5;
    margin-top: 10px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+/* BIGGER PRODUCT IMAGE ON MOBILE */
+@media (max-width: 900px) {
+  .hero-image img {
+    display: block;
+    width: 90vw;
+    max-width: 380px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+
+    /* No hover or tap effect */
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-image img:hover,
+  .hero-image img:active {
+    transform: none !important;
   }
 }

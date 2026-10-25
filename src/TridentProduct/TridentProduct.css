@@ -1,0 +1,55 @@
+/* Reuse the existing Ayur Netra product-page styling */
+@import "../HeroSection/Hero.css";
+
+/* Trident-specific adjustments only */
+.trident-hero {
+min-height: 100vh;
+}
+
+.trident-container {
+margin-top: 40px;
+}
+
+.trident-image img {
+display: block;
+width: 100%;
+max-width: 420px;
+height: auto;
+object-fit: contain;
+transition: transform 0.3s ease;
+}
+
+.trident-card h1 {
+line-height: 1.4;
+}
+
+.trident-card h1 span {
+color: green;
+}
+
+.trident-benefits p {
+margin: 16px 0;
+font-size: 16px;
+}
+
+@media (max-width: 900px) {
+.trident-container {
+flex-direction: column;
+gap: 30px;
+text-align: center;
+}
+
+.trident-image img {
+max-width: 250px;
+margin: auto;
+}
+
+.trident-card {
+width: 100%;
+padding: 20px;
+}
+
+.trident-card h1 {
+font-size: 20px;
+}
+}

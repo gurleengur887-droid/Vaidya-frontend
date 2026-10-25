@@ -1,0 +1,272 @@
+.trident-reviews {
+width: 100%;
+padding: 50px 4%;
+background: linear-gradient(
+135deg,
+#f0fbe9 0%,
+#dcf8e5 48%,
+#f4fff5 100%
+);
+box-sizing: border-box;
+font-family: inherit;
+}
+
+.trident-reviews *,
+.trident-reviews *::before,
+.trident-reviews *::after {
+box-sizing: border-box;
+}
+
+/* HEADER */
+
+.trident-reviews-header {
+max-width: 750px;
+margin: 0 auto 32px;
+text-align: center;
+}
+
+.trident-reviews-eyebrow {
+display: inline-block;
+margin-bottom: 8px;
+color: #16803a;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 2px;
+}
+
+.trident-reviews-header h2 {
+margin: 0;
+color: #12652f;
+font-family: inherit;
+font-size: 30px;
+font-weight: 700;
+line-height: 1.4;
+}
+
+.trident-reviews-header > p {
+margin: 8px 0 0;
+color: #55745b;
+font-size: 14px;
+line-height: 1.6;
+}
+
+.trident-reviews-divider {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+margin-top: 14px;
+color: #25a34a;
+}
+
+.trident-reviews-divider > span:first-child,
+.trident-reviews-divider > span:last-child {
+width: 45px;
+height: 2px;
+border-radius: 4px;
+background: #91d5a0;
+}
+
+.trident-reviews-divider .trident-divider-leaf {
+font-size: 17px;
+}
+
+/* GRID — 3 COLUMNS ON DESKTOP */
+
+.trident-reviews-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 22px;
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+}
+
+/* REVIEW CARD */
+
+.trident-review-card {
+display: flex;
+flex-direction: column;
+min-width: 0;
+padding: 22px;
+border: 1.5px solid #b9e8c5;
+border-radius: 18px;
+background: linear-gradient(145deg, #fff, #f1fff4);
+box-shadow: 0 8px 24px rgba(22, 101, 52, 0.11);
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease,
+border-color 0.25s ease;
+}
+
+.trident-review-card:hover {
+transform: translateY(-4px);
+border-color: #69c982;
+box-shadow: 0 14px 30px rgba(22, 101, 52, 0.17);
+}
+
+/* REVIEWER */
+
+.trident-review-top {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.trident-review-avatar {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 52px;
+height: 52px;
+border-radius: 50%;
+background: linear-gradient(135deg, #a8f0ba, #6fd58e);
+color: #10572b;
+font-size: 22px;
+font-weight: 800;
+box-shadow: 0 4px 10px rgba(22, 101, 52, 0.12);
+}
+
+.trident-review-person {
+min-width: 0;
+}
+
+.trident-review-person h3 {
+margin: 0;
+color: #14532d;
+font-family: inherit;
+font-size: 16px;
+font-weight: 800;
+line-height: 1.4;
+overflow-wrap: anywhere;
+}
+
+.trident-review-location {
+margin: 4px 0 0;
+color: #617565;
+font-size: 12px;
+line-height: 1.5;
+overflow-wrap: anywhere;
+}
+
+/* FIVE SOLID GOLD STARS */
+
+.trident-review-stars {
+margin-top: 13px;
+color: #e9a400;
+font-size: 23px;
+font-weight: 800;
+letter-spacing: 1px;
+line-height: 1.4;
+white-space: nowrap;
+}
+
+/* REVIEW TEXT */
+
+.trident-review-text {
+flex-grow: 1;
+margin: 12px 0 0;
+color: #304b38;
+font-size: 14px;
+font-weight: 500;
+line-height: 1.75;
+overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+.trident-reviews-footer {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+margin-top: 28px;
+text-align: center;
+}
+
+.trident-reviews-footer > span {
+font-size: 19px;
+}
+
+.trident-reviews-footer p {
+margin: 0;
+color: #167238;
+font-size: 15px;
+font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+.trident-reviews {
+padding: 42px 4%;
+}
+
+.trident-reviews-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+
+.trident-reviews-header h2 {
+font-size: 28px;
+}
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+.trident-reviews {
+padding: 35px 15px;
+}
+
+.trident-reviews-header {
+margin-bottom: 24px;
+}
+
+.trident-reviews-header h2 {
+font-size: 24px;
+}
+
+.trident-reviews-header > p {
+font-size: 13px;
+}
+
+.trident-reviews-grid {
+grid-template-columns: 1fr;
+gap: 15px;
+}
+
+.trident-review-card {
+padding: 19px;
+}
+
+.trident-review-person h3 {
+font-size: 15px;
+}
+
+.trident-review-stars {
+font-size: 21px;
+}
+
+.trident-review-text {
+font-size: 14px;
+line-height: 1.7;
+}
+
+.trident-reviews-footer {
+margin-top: 23px;
+}
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+.trident-review-card {
+transition: none;
+}
+
+.trident-review-card:hover {
+transform: none;
+}
+}
