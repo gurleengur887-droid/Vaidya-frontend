@@ -275,16 +275,57 @@ price: getTotal(),
 
       const data = await response.json();
 
-      if (!response.ok) {
-        showNotification(
-          data.message ||
-            "We couldn't place your order. Please try again."
-        );
+if (!response.ok) {
+  showNotification(
+    data.message ||
+      "We couldn't place your order. Please try again."
+  );
 
-        return;
+  return;
+}
+
+// ========================================
+// META PIXEL: PURCHASE EVENT
+// Fire only after successful order creation.
+// ========================================
+
+const orderId = data?.orderId;
+
+const metaContentName = /trident|tooth/i.test(productName || "")
+  ? "Trident Natural Tooth Lotion"
+  : "Ayur Netra Eye Drops";
+
+if (orderId && typeof window.fbq === "function") {
+  const purchaseStorageKey = `meta_purchase_tracked_${orderId}`;
+
+  // Prevent duplicate Purchase events for this order.
+  if (!localStorage.getItem(purchaseStorageKey)) {
+    const purchaseValue = Number(getTotal());
+
+    // Mark this order as tracked before sending the event.
+    localStorage.setItem(purchaseStorageKey, "1");
+
+    window.fbq(
+      "track",
+      "Purchase",
+      {
+        content_name: metaContentName,
+        value: purchaseValue,
+        currency: "INR",
+      },
+      {
+        eventID: String(orderId),
       }
+    );
+  }
+} else if (!orderId) {
+  console.error(
+    "Meta Purchase event not sent: orderId is missing."
+  );
+}
 
-      navigate("/success");
+// Continue to the existing success page.
+navigate("/success");
     } catch (error) {
       console.error("ORDER ERROR:", error);
 
