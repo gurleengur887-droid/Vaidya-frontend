@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -28,6 +28,23 @@ import ScrollToTop from "./ScrollToTop";
 
 function AppContent() {
   const location = useLocation();
+
+  // Remember the previous route to avoid duplicating
+  // the initial PageView already sent by index.html.
+  const previousPath = useRef(location.pathname);
+
+  // Track navigation between React pages.
+  useEffect(() => {
+    if (previousPath.current === location.pathname) {
+      return;
+    }
+
+    previousPath.current = location.pathname;
+
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "PageView");
+    }
+  }, [location.pathname]);
 
   // Header appears only on the homepage
   const isHomePage = location.pathname === "/";
