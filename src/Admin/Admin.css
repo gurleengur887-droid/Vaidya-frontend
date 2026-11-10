@@ -1858,3 +1858,226 @@
   }
 
 }
+/* =========================================
+   RESPONSIVE ADMIN LOGIN PAGE
+========================================= */
+
+/* Better sizing across all devices */
+.admin-login-page,
+.admin-login-page * {
+  box-sizing: border-box;
+}
+
+.admin-login-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 35px 20px;
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.admin-login-card {
+  width: 100%;
+}
+
+.admin-input-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-input-wrapper input {
+  min-width: 0;
+}
+
+.password-toggle {
+  flex-shrink: 0;
+  min-width: 30px;
+  min-height: 30px;
+  justify-content: center;
+}
+
+.admin-login-button {
+  min-height: 50px;
+}
+
+/* =========================================
+   MOBILE DEVICES
+========================================= */
+
+@media (max-width: 600px) {
+
+  .admin-login-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 30px 18px;
+    align-items: center;
+  }
+
+  .admin-login-container {
+    max-width: 430px;
+  }
+
+  .admin-login-brand {
+    gap: 11px;
+    margin-bottom: 27px;
+  }
+
+  .admin-brand-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+  }
+
+  .admin-login-brand h1 {
+    font-size: 21px;
+  }
+
+  .admin-login-brand p {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .admin-login-card {
+    padding: 30px 23px;
+    border-radius: 17px;
+  }
+
+  .admin-login-heading h2 {
+    font-size: 27px;
+    margin-top: 19px;
+  }
+
+  .admin-login-heading p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .admin-form-group {
+    margin-bottom: 19px;
+  }
+
+  .admin-form-group label {
+    font-size: 10px;
+  }
+
+  .admin-input-wrapper {
+    height: 52px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .admin-input-wrapper input {
+    font-size: 16px;
+  }
+
+  .admin-login-button {
+    height: 52px;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  .admin-login-footer {
+    font-size: 9px;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 23px;
+    flex-wrap: wrap;
+  }
+
+  .admin-copyright {
+    font-size: 10px;
+    margin-top: 23px;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .admin-login-page {
+    padding: 24px 13px;
+  }
+
+  .admin-login-brand {
+    margin-bottom: 23px;
+  }
+
+  .admin-brand-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admin-login-brand h1 {
+    font-size: 19px;
+  }
+
+  .admin-login-brand p {
+    font-size: 7px;
+    letter-spacing: 1.7px;
+  }
+
+  .admin-login-card {
+    padding: 25px 17px;
+    border-radius: 15px;
+  }
+
+  .admin-login-heading h2 {
+    font-size: 25px;
+  }
+
+  .admin-login-heading p {
+    font-size: 11px;
+  }
+
+  .admin-input-wrapper {
+    padding: 0 10px;
+  }
+
+  .admin-login-footer {
+    font-size: 8px;
+  }
+
+}
+
+/* =========================================
+   SHORT SCREENS / LANDSCAPE PHONES
+========================================= */
+
+@media (max-height: 650px) and (max-width: 900px) {
+
+  .admin-login-page {
+    align-items: flex-start;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .admin-login-brand {
+    margin-bottom: 20px;
+  }
+
+  .admin-login-card {
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+
+  .admin-login-heading h2 {
+    margin-top: 14px;
+  }
+
+  .admin-login-heading p {
+    margin-bottom: 18px;
+  }
+
+  .admin-copyright {
+    margin-top: 17px;
+  }
+
+}
