@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 
 const orderRoutes = require("./routes/order");
 const subscribeRoutes = require("./routes/subscribe");
+const adminRoutes = require("./routes/admin");
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 app.use("/api/order", orderRoutes);
 app.use("/api/subscribe", subscribeRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Connect DB
 mongoose

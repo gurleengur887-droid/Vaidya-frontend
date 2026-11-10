@@ -1,5 +1,5 @@
-
 import React, { useEffect, useRef } from "react";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
+// Customer Website Components
 import HeroSection from "./HeroSection/HeroSection";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -22,6 +23,11 @@ import SuccessPage from "./SuccessPage/SuccessPage";
 import TridentProduct from "./TridentProduct/TridentProduct";
 import ScrollToTop from "./ScrollToTop";
 
+// Admin Components
+import AdminLogin from "./Admin/AdminLogin";
+import AdminDashboard from "./Admin/AdminDashboard";
+import ProtectedAdminRoute from "./Admin/ProtectedAdminRoute";
+
 /* =========================================
    APP CONTENT
 ========================================= */
@@ -29,11 +35,9 @@ import ScrollToTop from "./ScrollToTop";
 function AppContent() {
   const location = useLocation();
 
-  // Remember the previous route to avoid duplicating
-  // the initial PageView already sent by index.html.
+  // Remember previous route for Meta Pixel tracking
   const previousPath = useRef(location.pathname);
 
-  // Track navigation between React pages.
   useEffect(() => {
     if (previousPath.current === location.pathname) {
       return;
@@ -46,17 +50,22 @@ function AppContent() {
     }
   }, [location.pathname]);
 
-  // Header appears only on the homepage
+  // Route conditions
   const isHomePage = location.pathname === "/";
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <>
-      {/* HEADER — HOMEPAGE ONLY */}
-      {isHomePage && <Header />}
+      {/* CUSTOMER HEADER */}
+      {!isAdminPage && isHomePage && <Header />}
 
-      {/* PAGES */}
+      {/* ALL ROUTES */}
       <Routes>
-        {/* HOME */}
+
+        {/* =================================
+            CUSTOMER WEBSITE
+        ================================= */}
+
         <Route path="/" element={<HeroSection />} />
 
         {/* AUTH */}
@@ -77,26 +86,75 @@ function AppContent() {
 
         {/* SUCCESS */}
         <Route path="/success" element={<SuccessPage />} />
+
+
+        {/* =================================
+            ADMIN LOGIN
+        ================================= */}
+
+        <Route
+          path="/admin"
+          element={<AdminLogin />}
+        />
+
+
+        {/* =================================
+            PROTECTED ADMIN DASHBOARD
+        ================================= */}
+
+        <Route element={<ProtectedAdminRoute />}>
+
+          <Route
+            path="/admin/dashboard"
+            element={<AdminDashboard />}
+          >
+
+            {/* ALL ORDERS */}
+            <Route
+              path="orders"
+              element={null}
+            />
+
+            {/* PENDING ORDERS */}
+            <Route
+              path="pending"
+              element={null}
+            />
+
+            {/* COMPLETED ORDERS */}
+            <Route
+              path="completed"
+              element={null}
+            />
+
+          </Route>
+
+        </Route>
+
       </Routes>
 
-      {/* FOOTER — ALL PAGES */}
-      <Footer />
+      {/* CUSTOMER FOOTER */}
+      {!isAdminPage && <Footer />}
+
     </>
   );
 }
 
+
 /* =========================================
-   APP
+   MAIN APP
 ========================================= */
 
 function App() {
   return (
     <Router>
+
       <ScrollToTop />
+
       <AppContent />
+
     </Router>
   );
 }
 
 export default App;
-
